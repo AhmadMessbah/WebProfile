@@ -20,7 +20,7 @@ import java.io.Serializable;
 @MappedSuperclass
 public class Base implements Serializable {
 //    @Column(name = "b_deleted", length = 1)
-//    @JsonbTransient
+    @JsonbTransient
     private boolean deleted;
 
 //    @Version
