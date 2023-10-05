@@ -3,13 +3,13 @@
 <html>
 <head>
     <title>JSP</title>
-    <jsp:include page="css-import.jsp"></jsp:include>
+    <jsp:include page="css-import.jsp"/>
 </head>
 <body>
 <div class="container-fluid">
     <p style="font-family: 'B Yekan'">قسمت اصلی سایت</p>
-<button class="btn btn-primary" onclick="fet()"><i class="fa fa-remove"></i> Test</button>
-<button onclick="wsConnect()">WebSocket</button>
+    <button class="btn btn-primary" onclick="fet()"><i class="fa fa-remove"></i> Test</button>
+    <button onclick="wsConnect()">WebSocket</button>
 </div>
 <script>
     async function fet() {
@@ -18,10 +18,10 @@
         });
         const data = await resp.json();
 
-        if (resp.status != 200 & resp.status != 201) {
+        if (resp.status !== 200 && resp.status !== 201) {
             console.log("Error : " + resp.status + " : " + data);
         } else {
-            data.forEach(function(item){
+            data.forEach(function (item) {
                 console.log(item);
             });
         }
@@ -52,11 +52,11 @@
     }
 
     function onClose(event) {
-        console.log("Close");
+        console.log("Close : " + event);
     }
 
     function onOpen(event) {
-        console.log("Connect");
+        console.log("Connect : " + event);
         // document.getElementById('connectionMessage').innerHTML = 'Connection established';
     }
 
@@ -74,6 +74,6 @@
         // webSocket.send(JSON.stringify(payload));
     }
 </script>
-<jsp:include page="js-import.jsp"></jsp:include>
+<jsp:include page="js-import.jsp"/>
 </body>
 </html>

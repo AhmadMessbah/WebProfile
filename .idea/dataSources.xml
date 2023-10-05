@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mft/Hibernate" uuid="4da3a132-156d-4d99-90ac-c3f14af66eb1">
+    <data-source source="LOCAL" name="mft/Hibernate" uuid="ec54c957-d3ea-4077-a1a8-68a4ceeb2f0c">
       <driver-ref>oracle.19</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
