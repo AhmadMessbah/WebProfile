@@ -1,0 +1,1 @@
+change tomee.xml for jta and server.xml for realm in {tomee_dir}/conf directory.
