@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="WebProfile:war exploded">
-    <output-path>$PROJECT_DIR$/target/ROOT</output-path>
+    <output-path>/target/ROOT</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
