@@ -36,7 +36,12 @@
 <!--            <artifactId>cdi-tomee</artifactId>-->
 <!--            <version>9.1.0</version>-->
 <!--        </dependency>-->
-
+<!--        <dependency>-->
+<!--            <groupId>jakarta.servlet</groupId>-->
+<!--            <artifactId>jakarta.servlet-api</artifactId>-->
+<!--            <version>6.0.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
@@ -157,11 +162,6 @@
             <type>pom</type>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>org.jboss.weld.se</groupId>-->
-        <!--            <artifactId>weld-se-core</artifactId>-->
-        <!--            <version>4.0.3.Final</version>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -174,6 +174,35 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>htmlunit-driver</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.faces</groupId>
+            <artifactId>jakarta.faces-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>tomee-mojarra</artifactId>
+            <version>9.1.0</version>
+            <scope>runtime</scope>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.myfaces.core</groupId>-->
+<!--            <artifactId>myfaces-impl</artifactId>-->
+<!--            <version>3.0.0</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
     <build>
