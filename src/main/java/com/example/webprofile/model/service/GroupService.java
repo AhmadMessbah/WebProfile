@@ -2,17 +2,19 @@ package com.example.webprofile.model.service;
 
 import com.example.webprofile.model.entity.Group;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
 
-@ApplicationScoped
+@RequestScoped
 @Named
-public class GroupService{
+public class GroupService implements Serializable {
     @PersistenceContext(unitName = "mft")
     private EntityManager entityManager;
 

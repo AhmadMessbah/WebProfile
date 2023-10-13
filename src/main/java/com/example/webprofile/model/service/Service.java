@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @RequestScoped
 @Named
-public class Service implements Serializable {
+    public class Service implements Serializable {
     @PersistenceContext(unitName = "mft")
     private EntityManager entityManager;
 
