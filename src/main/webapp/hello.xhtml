@@ -6,20 +6,50 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-   <!--<h:outputStylesheet library="css" name="/style.css"/>-->
+    <!--<h:outputStylesheet library="css" name="/style.css"/>-->
 </h:head>
 <f:view>
-   <h1>hello</h1>
-   <h:form>
-      <h:outputLabel for="name" value="Enter your name" required="true" />
-      <h:inputText id="name" value="#{hello.name}" />
-      <h:message for="name" />
-      <br />
-      <h:commandButton value="Say hello" action="#{hello.createMessage}">
-         <f:ajax execute="@form" render="@form" />
-      </h:commandButton>
-      <br />
-      #{hello.message}
-   </h:form>
+    <h1>hello</h1>
+    <h:form>
+        <h:outputLabel for="title" value="Enter your name" required="true"/>
+        <h:inputText id="title" label="" value="#{group.title}">
+            <f:validateBean for="title"/>
+        </h:inputText>
+        <h:message for="title"/>
+        <br/>
+        <h:commandButton value="Save1" action="#{service.save(group)}">
+            <f:ajax execute="@form" render="@form"/>
+        </h:commandButton>
+        <h:commandButton value="Save2" action="#{service.save}">
+            <f:ajax execute="@form" render="@form"/>
+        </h:commandButton>
+        <br/>
+    </h:form>
+
+<!--    <h:dataTable value = "#{userData.employees}" var = "employee"-->
+<!--                 styleClass = "employeeTable"-->
+<!--                 headerClass = "employeeTableHeader"-->
+<!--                 rowClasses = "employeeTableOddRow,employeeTableEvenRow">-->
+
+<!--        <h:column>-->
+<!--            <f:facet name = "header">Name</f:facet>-->
+<!--            #{employee.name}-->
+<!--        </h:column>-->
+
+<!--        <h:column>-->
+<!--            <f:facet name = "header">Department</f:facet>-->
+<!--            #{employee.department}-->
+<!--        </h:column>-->
+
+<!--        <h:column>-->
+<!--            <f:facet name = "header">Age</f:facet>-->
+<!--            #{employee.age}-->
+<!--        </h:column>-->
+
+<!--        <h:column>-->
+<!--            <f:facet name = "header">Salary</f:facet>-->
+<!--            #{employee.salary}-->
+<!--        </h:column>-->
+<!--    </h:dataTable>-->
 </f:view>
 </html>

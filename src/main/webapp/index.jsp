@@ -10,6 +10,7 @@
     <p style="font-family: 'B Yekan'">قسمت اصلی سایت</p>
     <button class="btn btn-primary" onclick="fet()"><i class="fa fa-remove"></i> Test</button>
     <button onclick="wsConnect()">WebSocket</button>
+    <a href="hello.xhtml">Hello</a>
 </div>
 <script>
     async function fet() {

@@ -1,6 +1,9 @@
 package com.example.webprofile.model.entity;
 
 import com.google.gson.Gson;
+import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
@@ -15,7 +18,8 @@ import lombok.experimental.SuperBuilder;
 
 @Entity(name = "groupEntity")
 @Table(name = "group_tbl")
-
+@Named
+@Dependent
 @NamedQueries({
         @NamedQuery(name = "Group.FindByParentId", query = "select oo from groupEntity oo where oo.parent.id=:parentId"),
         @NamedQuery(name = "Group.FindParents", query = "select oo from groupEntity oo where oo.parent.id is null")
