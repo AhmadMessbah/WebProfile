@@ -20,6 +20,11 @@ import java.io.IOException;
 @Named
 public class FileUploadServlet extends HttpServlet {
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println(getServletContext().getContextPath());
+    }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         /* Receive file uploaded to the Servlet from the HTML5 form */

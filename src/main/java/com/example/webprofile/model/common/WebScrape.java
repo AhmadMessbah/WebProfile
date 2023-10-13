@@ -1,4 +1,4 @@
-package com.example.webprofile;
+package com.example.webprofile.model.common;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
