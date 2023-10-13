@@ -6,6 +6,7 @@ import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class GroupService{
     @PersistenceContext(unitName = "mft")
     private EntityManager entityManager;
 
+    @Transactional
     public Group save(Group group) throws Exception {
         System.out.println("Save : " + group);
         entityManager.persist(group);
