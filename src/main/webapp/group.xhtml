@@ -10,46 +10,41 @@
 </h:head>
 <f:view>
     <h1>hello</h1>
-    <h:form>
+    <h:form enctype="multipart/form-data">
         <h:outputLabel for="title" value="Enter your name" required="true"/>
         <h:inputText id="title" label="" value="#{group.title}">
             <f:validateBean for="title"/>
         </h:inputText>
         <h:message for="title"/>
         <br/>
+        <h:inputFile name="file" value="Choose File"/>
+        <br/>
         <h:commandButton value="Save1" action="#{service.save(group)}">
             <f:ajax execute="@form" render="@form"/>
         </h:commandButton>
-        <h:commandButton value="Save2" action="#{service.save}">
-            <f:ajax execute="@form" render="@form"/>
-        </h:commandButton>
+<!--        <h:commandButton value="Save2" method="post" action="#{request.contextPath}/fileuploadservlet" type="submit">-->
+<!--            <f:ajax execute="@form" render="@form"/>-->
+<!--        </h:commandButton>-->
+<!--        <h:commandButton value="Save3" action="#{request.contextPath}/fileuploadservlet" type="submit">-->
+<!--            <f:ajax execute="@form" render="@form"/>-->
+<!--        </h:commandButton>-->
         <br/>
     </h:form>
 
-<!--    <h:dataTable value = "#{userData.employees}" var = "employee"-->
+    <h:dataTable value = "#{groupService.findAll()}" var = "g">
 <!--                 styleClass = "employeeTable"-->
 <!--                 headerClass = "employeeTableHeader"-->
 <!--                 rowClasses = "employeeTableOddRow,employeeTableEvenRow">-->
 
-<!--        <h:column>-->
-<!--            <f:facet name = "header">Name</f:facet>-->
-<!--            #{employee.name}-->
-<!--        </h:column>-->
+        <h:column>
+            <f:facet name = "header">Id</f:facet>
+            #{g.id}
+        </h:column>
 
-<!--        <h:column>-->
-<!--            <f:facet name = "header">Department</f:facet>-->
-<!--            #{employee.department}-->
-<!--        </h:column>-->
-
-<!--        <h:column>-->
-<!--            <f:facet name = "header">Age</f:facet>-->
-<!--            #{employee.age}-->
-<!--        </h:column>-->
-
-<!--        <h:column>-->
-<!--            <f:facet name = "header">Salary</f:facet>-->
-<!--            #{employee.salary}-->
-<!--        </h:column>-->
-<!--    </h:dataTable>-->
+        <h:column>
+            <f:facet name = "header">Title</f:facet>
+            #{g.title}
+        </h:column>
+    </h:dataTable>
 </f:view>
 </html>
