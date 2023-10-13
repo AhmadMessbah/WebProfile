@@ -6,27 +6,50 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.Part;
 import jakarta.transaction.Transactional;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 
 @RequestScoped
 @Named
-    public class Service implements Serializable {
+public class Service implements Serializable {
     @PersistenceContext(unitName = "mft")
     private EntityManager entityManager;
 
+    public Part getFile() {
+        return file;
+    }
+
+    public void setFile(Part file) {
+        this.file = file;
+    }
+
+    private Part file;
 
     public Service() {
         System.out.println("Service - Created");
     }
 
     @Transactional
-    public void test() {
-        System.out.println("Service - test");
-        Group root1 = Group.builder().title("Root1").build();
-        entityManager.persist(root1);
-        System.out.println(root1);
+    public void upload() {
+        try {
+            file.write("./test.txt");
+            System.out.println(System.getProperty("."));
+            System.out.println(System.getProperty("user.dir"));
+            System.out.println(System.getProperty("user.home"));
+            System.out.println(new File(".").getCanonicalPath());
+            System.out.println(new File(".").getPath());
+            System.out.println(new File(".").getAbsolutePath());
+            System.out.println(new File(".").getPath());
+            System.out.println(file.getSize());
+        } catch (IOException e) {
+            System.out.println("Upload error");
+        }
     }
 
     @Transactional

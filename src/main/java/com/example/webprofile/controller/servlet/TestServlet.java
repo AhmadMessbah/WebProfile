@@ -20,7 +20,7 @@ private Service service;
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        req.getSession().setAttribute("jjj",AttachmentController.findAll().toString());
         try {
-            service.test();
+//            service.test();
 //            System.out.println(service.findAll());
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -2,7 +2,6 @@ package com.example.webprofile.model.entity;
 
 import com.google.gson.Gson;
 import jakarta.enterprise.context.Dependent;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;

@@ -17,8 +17,9 @@
         </h:inputText>
         <h:message for="title"/>
         <br/>
-        <h:inputFile name="file" value="Choose File"/>
+        <h:inputFile name="file" value="#{service.file}"/>
         <br/>
+        <h:commandButton value="Upload" action="#{service.upload()}"/>
         <h:commandButton value="Save1" action="#{groupService.save(group)}">
             <f:ajax execute="@form" render="groupTable @form"/>
         </h:commandButton>

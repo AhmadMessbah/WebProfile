@@ -4,7 +4,7 @@ package com.example.webprofile.model.service;
 public class Test {
     public static void main(String[] args) throws Exception {
         Service service = new Service();
-        service.test();
+//        service.test();
  //        GroupService.getService().remove(1);
 //        Group root1 = Group.builder().title("Root1").build();
 //        System.out.println(GroupService.getService().save(root1));
