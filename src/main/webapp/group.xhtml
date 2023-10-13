@@ -20,21 +20,16 @@
         <h:inputFile name="file" value="Choose File"/>
         <br/>
         <h:commandButton value="Save1" action="#{groupService.save(group)}">
-            <f:ajax execute="@form" render="@form"/>
+            <f:ajax execute="@form" render="groupTable @form"/>
         </h:commandButton>
-        <h:commandButton value="Save2" action="#{groupService.save}">
-            <f:param name="action" value="#{group}"/>
-        </h:commandButton>
-<!--        <h:commandButton value="Save2" method="post" action="#{request.contextPath}/fileuploadservlet" type="submit">-->
-<!--            <f:ajax execute="@form" render="@form"/>-->
-<!--        </h:commandButton>-->
-<!--        <h:commandButton value="Save3" action="#{request.contextPath}/fileuploadservlet" type="submit">-->
-<!--            <f:ajax execute="@form" render="@form"/>-->
-<!--        </h:commandButton>-->
+        <h:selectOneMenu id="groups" >]
+            <f:selectItems value="#{groupService.findAll()}"/>
+        </h:selectOneMenu>
+
         <br/>
     </h:form>
 
-    <h:dataTable value = "#{groupService.findAll()}" var = "g">
+    <h:dataTable id="groupTable" value = "#{groupService.findAll()}" var = "g">
 <!--                 styleClass = "employeeTable"-->
 <!--                 headerClass = "employeeTableHeader"-->
 <!--                 rowClasses = "employeeTableOddRow,employeeTableEvenRow">-->
