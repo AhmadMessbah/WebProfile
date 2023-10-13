@@ -10,22 +10,16 @@ public class WebScrape {
     public static void main(String[] args) {
         WebDriver driver = new HtmlUnitDriver();
 
-        driver.get("https://mftplus.com/teacher/login");
+        driver.get("https://www.google.com");
 
-        WebElement fElement = driver.findElement(By.tagName("form"));
-        WebElement uElement = driver.findElement(By.id("username"));
-        WebElement pElement = driver.findElement(By.id("password"));
+        WebElement element = driver.findElement(By.name("q"));
 
-        uElement.sendKeys("09178505323");
-        pElement.sendKeys("21261708");
+        element.sendKeys("");
 
-        fElement.submit();
+        element.submit();
 
         System.out.println("Page title is: " + driver.getTitle());
         System.out.println("Page is: " + driver.getPageSource());
-
-        driver.get("https://mftplus.com/teacher/profile");
-        System.out.println(driver.getTitle());
 
         driver.quit();
     }
